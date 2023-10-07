@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID</title>
+    <style>
+        #con {
+            display: grid;
+            border: 5px solid red;
+            grid-auto-flow: column;
+            grid-template-areas: 
+                "one two three"
+                "one four four"
+                "five six seven"
+                "eight eight seven";
+            grid-gap: 10px;
+            height: 100vh;
+        }
+        .boxes {
+            border: 2px solid black;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        #a { grid-area: one; }
+        #b { grid-area: two; }
+        #c { grid-area: three; }
+        #d { grid-area: four; }
+        #e { grid-area: five; }
+        #f { grid-area: six; }
+        #g { grid-area: seven; }
+        #h { grid-area: eight; }
+        @media (max-width: 460px) {
+            #con {
+                grid-template-areas: 
+                    "one"
+                    "two"
+                    "three"
+                    "four"
+                    "five"
+                    "six"
+                    "seven"
+                    "eight";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="con">
+        <div class="boxes" id="a">1</div>
+        <div class="boxes" id="b">2</div>
+        <div class="boxes" id="c">3</div>
+        <div class="boxes" id="d">4</div>
+        <div class="boxes" id="e">5</div>
+        <div class="boxes" id="f">6</div>
+        <div class="boxes" id="g">7</div>
+        <div class="boxes" id="h">8</div>
+    </div>
+</body>
+</html>
